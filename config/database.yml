@@ -1,0 +1,21 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  pool: 10
+  min_messages: warning
+  timeout: 5000
+  database: mychat_developement
+  username: root
+  password: India@19
+  socket: /var/run/mysqld/mysqld.sock
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  pool: 10
+  min_messages: warning
+  timeout: 5000
+  database: mychat_test
+  username: root
+  password: India@19
+  socket: /var/run/mysqld/mysqld.sock
