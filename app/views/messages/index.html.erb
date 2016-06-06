@@ -1,10 +1,54 @@
-<h3>Messages</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Chat
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                        <ul class="dropdown-menu slidedown">
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+                            </span>Refresh</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+                            </span>Available</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+                            </span>Busy</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+                                Away</a></li>
+                            <li class="divider"></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav panel-tabs">
+                       	<%= sync partial: 'message_row', collection: @messages %>
+						<%= sync_new partial: 'message_row', resource: Message.new %> 
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                     <div class="col-md-10">
 
-<%= sync partial: 'message_row', collection: @messages %>
+                    <%= form_for @new_message, remote: true do |f| %>
+                        <%= f.text_field :body ,class:"client_request",placeholder: "Type your message here..." %>
+                        <%= submit_tag "send", :id => 'create_button', :onClick => 'javascript:submitForm();',class: "btn btn-warning btn-sm" %>
+                        <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   <% if user_signed_in? %>
+  <p>Welcome <%= current_user.email %></p>
  
-<hr>
-
-<%= form_for @new_message, remote: true do |f| %>
-    <%= f.text_field :body %>
+  <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
+<% else %>
+  <p>You are not signed in.</p>
+  <%= link_to 'Login', new_user_session_path %>
 <% end %>
-
+  

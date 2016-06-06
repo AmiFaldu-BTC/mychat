@@ -4,7 +4,7 @@ development:
   pool: 10
   min_messages: warning
   timeout: 5000
-  database: mychat_developement
+  database: mych_developement
   username: root
   password: India@19
   socket: /var/run/mysqld/mysqld.sock
@@ -15,7 +15,7 @@ test:
   pool: 10
   min_messages: warning
   timeout: 5000
-  database: mychat_test
+  database: mych_test
   username: root
   password: India@19
   socket: /var/run/mysqld/mysqld.sock

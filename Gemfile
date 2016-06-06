@@ -15,6 +15,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'faye'
 gem 'thin', require: false
 gem 'sync'
+gem 'gemoji'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.all
     @new_message = current_user.messages.build
+    
   end
 
   def create
@@ -23,4 +24,5 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:body)
   end
+
 end

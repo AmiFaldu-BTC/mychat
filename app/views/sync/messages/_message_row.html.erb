@@ -1,5 +1,11 @@
 
-      <tr>
-       <td><b><%= message.user.name %></b></td><br></td></tr>
-        <tr>
-       <td><%= message.body %><br> </td></tr>
+
+      <div class="chat-body clearfix">
+
+
+ <div class="header">
+ <strong class="primary-font"><%= message.user.name %>:</strong><%= message.body %>
+<small class="pull-right text-muted">
+<span class="glyphicon glyphicon-time"></span><%= message.created_at.strftime("%H:%M:%S")%></small>
+</div>
+</div>
